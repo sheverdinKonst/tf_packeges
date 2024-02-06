@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+    <!--=======================================================-->
+    <VIEW name="main">
+        <!--===================================================-->
+		
+		<COMMAND name="config igmp_snooping"
+             help="Configure IGMP Snooping">
+        </COMMAND>
+
+            <COMMAND name="config igmp_snooping state"
+                   help="set state">
+                <PARAM name="stateValue"
+                       help="set state value"
+                       ptype="STATE"/>
+                <ACTION>
+                    echo "************************** SUMMARY CONFIG IGMP SNOOPING **********************"
+                    echo "state:                        "${stateValue}
+                </ACTION>
+            </COMMAND>
+
+            <COMMAND name="config igmp_snooping ports"
+                   help="set Port state">
+
+                <PARAM name="portStart"
+                       optional="false"
+                       help="port start"
+                       ptype="PORT_NUM"/>
+
+                <PARAM name="portEnd"
+                       optional="true"
+                       help="port END"
+                       ptype="PORT_NUM"/>
+                <ACTION>
+                    echo "************************** SUMMARY CONFIG IGMP SNOOPING **********************"
+                    echo "port start:                   "${portStart}
+                    echo "port end:                     "${portEnd}
+                </ACTION>
+            </COMMAND>
+
+            <COMMAND name="config igmp_snooping query_interval"
+                   help="set query interval">
+                <PARAM name="query_intervalValue"
+                       help="set query interval value"
+                       ptype="UINT_8"/>
+                <ACTION>
+                    echo "************************** SUMMARY CONFIG IGMP SNOOPING **********************"
+                    echo "query interval:               "${query_intervalValue}
+                </ACTION>
+            </COMMAND>
+
+            <COMMAND name="config igmp_snooping query_response_interval"
+                   help="set query response interval">
+                <PARAM name="query_response_intervalValue"
+                       help="set query response interval"
+                       ptype="UINT_8"/>
+                <ACTION>
+                    echo "************************** SUMMARY CONFIG IGMP SNOOPING **********************"
+                    echo "query response interval:      "${query_response_intervalValue}
+                </ACTION>
+            </COMMAND>
+
+            <COMMAND name="config igmp_snooping group_membership_time"
+                   help="set group_membership_time">
+                <PARAM name="group_membership_timeValue"
+                       help="set query group membership time"
+                       ptype="UINT_8"/>
+                <ACTION>
+                    echo "************************** SUMMARY CONFIG IGMP SNOOPING **********************"
+                    echo "group membership time:        "${group_membership_timeValue}
+                </ACTION>
+            </COMMAND>
+
+            <COMMAND name="config igmp_snooping other_queried_present_int"
+                   help="set group_membership_time">
+                <PARAM name="other_queried_present_intValue"
+                       help="set other queried present int"
+                       ptype="UINT_8"/>
+                <ACTION>
+                    echo "************************** SUMMARY CONFIG IGMP SNOOPING **********************"
+                    echo "other queried present int:    "${other_queried_present_intValue}
+                </ACTION>
+            </COMMAND>
+
+            <COMMAND name="config igmp_snooping send_query"
+                   help="set send_query">
+                <PARAM name="send_queryValue"
+                       help="set send_query"
+                       ptype="STATE"/>
+                <ACTION>
+                    echo "************************** SUMMARY CONFIG IGMP SNOOPING **********************"
+                    echo "send query:                   "${send_queryValue}
+                </ACTION>
+            </COMMAND>
+	</VIEW>
+    <!--=======================================================-->
+</CLISH_MODULE>

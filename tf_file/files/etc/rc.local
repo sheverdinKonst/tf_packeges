@@ -1,0 +1,16 @@
+#rc.local for tfortis PSW ver 1.1
+
+#disable jtag on gpio lines
+devmem 0x1b001000 32 8
+
+#LED configuration 
+#LED_GLB_CTRL
+devmem 0x1b00a000 32 0x2F391201
+#LED_MODE_SEL
+devmem 0x1b001004 32 0x0000000C
+#LED_MODE_CTRL
+devmem 0x1b00a004 32 0x0
+#LED_P_EN_CTRL
+devmem 0x1b00a008 32 0x0500FF00
+
+

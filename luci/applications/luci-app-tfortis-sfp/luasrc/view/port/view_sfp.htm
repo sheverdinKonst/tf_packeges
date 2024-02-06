@@ -1,0 +1,102 @@
+<%
+	local util = require "luci.util"
+	local fs = require "nixio.fs"
+	local sys = require "luci.sys"
+	local http = require "luci.http"
+	local dispatcher = require "luci.dispatcher"
+	local uci = require "luci.model.uci".cursor()
+	
+	local sfp1_present = luci.util.exec("/usr/bin/request_ctrl SFP1_PRESENT get")	
+	local sfp1_los = luci.util.exec("/usr/bin/request_ctrl SFP1_LOS get")	
+	local sfp1_vendor = luci.util.exec("/usr/bin/request_ctrl SFP1_VENDOR get")	
+	local sfp1_vendor_oui = luci.util.exec("/usr/bin/request_ctrl SFP1_VENDOR_OUI get")	
+	local sfp1_vendor_pn = luci.util.exec("/usr/bin/request_ctrl SFP1_VENDOR_PN get")	
+	local sfp1_vendor_rev = luci.util.exec("/usr/bin/request_ctrl SFP1_VENDOR_REV get")	
+	local sfp1_connector = luci.util.exec("/usr/bin/request_ctrl SFP1_CONNECTOR get")	
+	local sfp1_temper = luci.util.exec("/usr/bin/request_ctrl SFP1_TEMPER get")	
+	local sfp1_voltage = luci.util.exec("/usr/bin/request_ctrl SFP1_VOLTAGE get")	
+	local sfp1_tx_bias = luci.util.exec("/usr/bin/request_ctrl SFP1_TX_BIAS get")	
+	local sfp1_tx_power = luci.util.exec("/usr/bin/request_ctrl SFP1_TX_POWER get")
+	local sfp1_rx_power = luci.util.exec("/usr/bin/request_ctrl SFP1_RX_POWER get")		
+
+	local sfp2_present = luci.util.exec("/usr/bin/request_ctrl SFP2_PRESENT get")	
+	local sfp2_los = luci.util.exec("/usr/bin/request_ctrl SFP2_LOS get")	
+	local sfp2_vendor = luci.util.exec("/usr/bin/request_ctrl SFP2_VENDOR get")	
+	local sfp2_vendor_oui = luci.util.exec("/usr/bin/request_ctrl SFP2_VENDOR_OUI get")	
+	local sfp2_vendor_pn = luci.util.exec("/usr/bin/request_ctrl SFP2_VENDOR_PN get")	
+	local sfp2_vendor_rev = luci.util.exec("/usr/bin/request_ctrl SFP2_VENDOR_REV get")	
+	local sfp2_connector = luci.util.exec("/usr/bin/request_ctrl SFP2_CONNECTOR get")	
+	local sfp2_temper = luci.util.exec("/usr/bin/request_ctrl SFP2_TEMPER get")	
+	local sfp2_voltage = luci.util.exec("/usr/bin/request_ctrl SFP2_VOLTAGE get")	
+	local sfp2_tx_bias = luci.util.exec("/usr/bin/request_ctrl SFP2_TX_BIAS get")	
+	local sfp2_tx_power = luci.util.exec("/usr/bin/request_ctrl SFP2_TX_POWER get")
+	local sfp2_rx_power = luci.util.exec("/usr/bin/request_ctrl SFP2_RX_POWER get")		
+
+-%>
+
+<%+header%>
+
+<style>
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border-bottom: 1px solid var(--border-color-medium);
+  font-size: 12px;
+  padding: 10px;
+  text-align: justify;
+  display: table-cell;
+  vertical-align: top;
+}
+
+td input[type="checkbox"] {
+    float: left;
+    margin: 0 auto;
+    width: 40%;
+}
+
+tr:nth-child(odd) {background-color: var(--background-color-medium)}
+
+</style>
+
+	<div class="cbi-map-descr"><%:Statistics of SFP%> .</div>
+	
+	<h2><%:SFP1%></h2>
+	
+	<p></p>
+	<div class="table" width="100%">
+	<div class="tr"><div class="td left" width="33%"><%:Present%>:</div><div class="td left"><%=sfp1_present%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:LOS%>:</div><div class="td left"><%=sfp1_los%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:Vendor%>:</div><div class="td left"><%=sfp1_vendor%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:Vendor OUI%>:</div><div class="td left"><%=sfp1_vendor_oui%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:Vendor PN%>:</div><div class="td left"><%=sfp1_vendor_pn%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:Vendor rev%>:</div><div class="td left"><%=sfp1_vendor_rev%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:Connector%>:</div><div class="td left"><%=sfp1_connector%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:Temper%>:</div><div class="td left"><%=sfp1_temper%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:Voltage%>:</div><div class="td left"><%=sfp1_voltage%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:TX bias%>:</div><div class="td left"><%=sfp1_tx_bias%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:TX power%>:</div><div class="td left"><%=sfp1_tx_power%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:RX power%>:</div><div class="td left"><%=sfp1_rx_power%></div></div>
+	</div>
+	
+	<h2><%:SFP2%></h2>
+	<p></p>
+	<div class="table" width="100%">
+	<div class="tr"><div class="td left" width="33%"><%:Present%>:</div><div class="td left"><%=sfp2_present%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:LOS%>:</div><div class="td left"><%=sfp2_los%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:Vendor%>:</div><div class="td left"><%=sfp2_vendor%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:Vendor OUI%>:</div><div class="td left"><%=sfp2_vendor_oui%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:Vendor PN%>:</div><div class="td left"><%=sfp2_vendor_pn%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:Vendor rev%>:</div><div class="td left"><%=sfp2_vendor_rev%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:Connector%>:</div><div class="td left"><%=sfp2_connector%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:Temper%>:</div><div class="td left"><%=sfp2_temper%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:Voltage%>:</div><div class="td left"><%=sfp2_voltage%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:TX bias%>:</div><div class="td left"><%=sfp2_tx_bias%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:TX power%>:</div><div class="td left"><%=sfp2_tx_power%></div></div>
+	<div class="tr"><div class="td left" width="33%"><%:RX power%>:</div><div class="td left"><%=sfp2_rx_power%></div></div>
+	</div>	
+<%+footer%>
