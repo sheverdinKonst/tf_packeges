@@ -20,7 +20,7 @@ LUCI_DEPENDS:= \
 	+collectd-mod-network
 
 define Package/luci-app-statistics/conffiles
-/etc/config/luci_statistics
+	/etc/config/luci_statistics
 endef
 
 include ../../luci.mk

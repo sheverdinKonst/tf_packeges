@@ -149,3 +149,5 @@ return L.Class.extend({
 	renderFooter: renderFooter,
 	init: init,
 });
+
+

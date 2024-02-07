@@ -114,6 +114,7 @@ fi
 is_mstp_bridge()
 {
     if [ -z "$MSTP_BRIDGES" ]; then
+        errmsg "MSTP_BRIDGES empty"
         return 0
     fi
     for b in $MSTP_BRIDGES; do
@@ -188,6 +189,7 @@ case "$action" in
         fi
 
         # Exit if any other bridges are using mstpd.
+
         for xbridge in $(ls "$net_dir"); do
             # Ignore this bridge
             if [ "$bridge" = "$xbridge" ]; then

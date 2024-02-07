@@ -6,6 +6,6 @@ include $(TOPDIR)/rules.mk
 LUCI_TITLE:=LuCI TFortis Autorestart
 LUCI_DEPENDS:=+luci-base
 
-include $(TOPDIR)/feeds/luci/luci.mk
-
+#include $(TOPDIR)/feeds/luci/luci.mk
+include ../../luci.mk
 # call BuildPackage - OpenWrt buildroot signature

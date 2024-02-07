@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=mstpd
 PKG_VERSION:=0.1.0
-PKG_RELEASE:=1
+PKG_RELEASE:=3
 
 PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
 PKG_LICENSE:=GPL-2.0-or-later
@@ -22,6 +22,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/mstpd
   SECTION:=net
   CATEGORY:=TFortis
+  DEFAULT:=y
   TITLE:=Multiple Spanning Tree Protocol daemon
   URL:=https://github.com/mstpd/mstpd
 endef
@@ -45,10 +46,13 @@ define Package/mstpd/install
 	$(INSTALL_DIR) $(1)/usr/sbin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mstpd $(1)/usr/sbin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mstpctl $(1)/usr/sbin
-	$(INSTALL_DIR) $(1)/etc/init.d/
-	$(INSTALL_BIN) ./files/etc/init.d/mstpd.init $(1)/etc/init.d/mstpd
-	$(INSTALL_DIR) $(1)/sbin
-	$(INSTALL_BIN) ./files/sbin/bridge-stp $(1)/sbin
+	#$(INSTALL_DIR) $(1)/etc/init.d/
+	#$(INSTALL_DIR) $(1)/sbin
+	$(CP) ./files/* $(1)/
+	#$(INSTALL_BIN) ./files/etc/init.d/mstpd.init $(1)/etc/init.d/mstpd
+	#$(INSTALL_BIN) ./files/sbin/bridge-stp $(1)/sbin
+	#$(INSTALL_BIN) ./files/lib/functions/mstpd.sh $(1)/lib/functions
+	#$(INSTALL_BIN) ./files/usr/libexec/mstpctl-utils/mstpd-config-migrate.sh $(1)/usr/libexec/mstpctl-utils/
 endef
 
 $(eval $(call BuildPackage,mstpd))
