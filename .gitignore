@@ -50,3 +50,7 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+/.idea/vcs.xml
+/.idea/tf_packeges.iml
+/.idea/modules.xml
+/.idea/.gitignore
