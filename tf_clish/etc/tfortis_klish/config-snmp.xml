@@ -115,8 +115,8 @@
                 #echo "level Value:     "${levelValue}
 
                 if [[  -n "${stateValue}" ]]; then
-                echo "state"
-                    /etc/tfortis_klish/clish/scripts/set_snmp_state.sh  ${stateValue}
+                    echo "state"
+                    /etc/tfortis_klish/scripts/snmp/set_snmp_state.sh  ${stateValue}
                 fi
 
                 echo "hostValue" "${hostValue}"
@@ -130,29 +130,28 @@
 
                 if [[  -n "${hostbool}" ]]; then
                     echo "host"
-                    #/etc/tfortis_klish/clish/scripts/set_ports_state.sh ${portValue}
+                    #/etc/tfortis_klish/scripts/snmp/set_snmp_state.sh ${hostbool}
                 fi
 
                 if [[  -n "${portValue}" ]]; then
                     echo "port"
-                    /etc/tfortis_klish/clish/scripts/set_ports_state.sh ${portValue}
+                    /etc/tfortis_klish/scripts/snmp/set_snmp_port.sh ${portValue}
                 fi
 
                 if [[  -n "${read_community}" ]]; then
                     echo "read"
-                    /etc/tfortis_klish/clish/scripts/set_snmp_read_com.sh ${rcValue}
+                    /etc/tfortis_klish/scripts/snmp/set_snmp_read_com.sh ${rcValue}
                 fi
 
                 if [[  -n "${write_community}" ]]; then
                     echo "write"
-                    /etc/tfortis_klish/clish/scripts/set_snmp_write_com.sh ${wcValue}
+                    /etc/tfortis_klish/scripts/snmp/set_snmp_write_com.sh ${wcValue}
                 fi
 
                 if [[  -n "${versionValue}" ]]; then
                     echo "version"
-                    /etc/tfortis_klish/clish/scripts/set_snmp_version.sh ${versionValue}
+                    /etc/tfortis_klish/scripts/snmp/set_snmp_version.sh ${versionValue}
                 fi
-
             </ACTION>
         </COMMAND>
 	</VIEW>

@@ -40,7 +40,7 @@
 
             <ACTION>
                 echo "************************** SUMMARY CONFIG USER ACCOUNT ADD **********************"
-                /etc/tfortis_klish/clish/scripts/set_useraccount_add.sh  "${username}" "${adminruleValue}"
+                /etc/tfortis_klish/scripts/user_account/set_useraccount_add.sh  "${username}" "${adminruleValue}"
             </ACTION>
         </COMMAND>
 
@@ -60,8 +60,8 @@
             </PARAM>
 
             <ACTION>
-                echo "************************** SUMMARY CONFIG USER ACCOUNT DELETE**********************"
-                /etc/tfortis_klish/clish/scripts/set_useraccount_delete.sh "${username}"
+                echo "************************** SUMMARY CONFIG USER ACCOUNT DELETE **********************"
+                /etc/tfortis_klish/scripts/user_account/set_useraccount_delete.sh "${username}"
             </ACTION>
 
         </COMMAND>

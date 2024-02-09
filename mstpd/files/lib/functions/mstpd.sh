@@ -15,10 +15,10 @@
 BRCTL_BIN='/usr/sbin/brctl'
 
 # The mstpctl executable
-MSTPCTL_BIN='/sbin/mstpctl'
+MSTPCTL_BIN='/usr/sbin/mstpctl'
 
 # The mstpd executable
-MSTPD_BIN='/sbin/mstpd'
+MSTPD_BIN='/usr/sbin/mstpd'
 
 # Tag for log
 MSTPD_LOG_TAG="mstpd"

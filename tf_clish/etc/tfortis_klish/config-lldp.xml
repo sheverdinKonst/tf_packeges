@@ -71,7 +71,7 @@
 
             <ACTION>
                 echo "************************** SUMMARY CONFIG LLDP PORTS **********************"
-                /etc/tfortis_klish/clish/scripts/set_lldp_ports.sh ${portlist} ${stateValue}
+                /etc/tfortis_klish/scripts/lua/lldpd/set_lldp_ports.sh ${portlist} ${stateValue}
             </ACTION>
         </COMMAND>
 	</VIEW>

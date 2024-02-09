@@ -39,7 +39,7 @@
 
             <ACTION>
                 echo "************************** SUMMARY CONFIG SNTP ADD **********************"
-                /etc/tfortis_klish/clish/scripts/lua/sntpConfig/set_sntp_add.lua ${hostname}
+                /etc/tfortis_klish/scripts/lua/sntpConfig/set_sntp_add.lua ${hostname}
             </ACTION>
         </COMMAND>
 
@@ -58,7 +58,7 @@
             </PARAM>
             <ACTION>
                 echo "************************** SUMMARY CONFIG SNTP DELETE **********************"
-                /etc/tfortis_klish/clish/scripts/lua//sntpConfig/set_sntp_del.lua ${hostname}
+                /etc/tfortis_klish/scripts/lua/sntpConfig/set_sntp_del.lua ${hostname}
             </ACTION>
         </COMMAND>
 
@@ -69,7 +69,7 @@
                        ptype="TIMEZONE"/>
             <ACTION>
                 echo "************************** SUMMARY CONFIG TIMEZONE **********************"
-                /etc/tfortis_klish/clish/scripts/lua//sntpConfig/set_sntp_timezone.lua ${timezoneValue}
+                tf_clish/etc/tfortis_klish/scripts/lua/sntpConfig/set_sntp_timezone.lua ${timezoneValue}
             </ACTION>
         </COMMAND>
     </VIEW>

@@ -28,9 +28,8 @@ http://clish.sourceforge.net/XMLSchema/clish.xsd">
         <PARAM name="name7" help="" optional="true" ptype="STRING"> </PARAM>
 
         <ACTION>
-            /etc/tfortis_klish/clish/scripts/set_description.sh "description" ${name1} ${name2} ${name3} ${name4} ${name5} ${name6} ${name7]
+            /etc/tfortis_klish/scripts/description/set_description.sh "description" ${name1} ${name2} ${name3} ${name4} ${name5} ${name6} ${name7]
         </ACTION>
-
     </COMMAND>
 
     <COMMAND name="config description location"

@@ -10,8 +10,54 @@
 		<COMMAND name="config stp"
              help="Configure Spanning Tree">
 		</COMMAND>
-		
 
+        <COMMAND name="config stp state"
+                 help="Enable/Disable STP/RSTP">
+            <PARAM name="satateVvalue"
+                   help="value enable, disable"
+                   ptype="STATE_DE"/>
+            <ACTION>
+                echo "**************************  stp state  **********************"
+
+            </ACTION>
+        </COMMAND>
+
+        <COMMAND name="config stp version"
+                 help="Choose stp version: stp, rstp, mstp">
+            <PARAM name="versionVvalue"
+                   help="stp, rstp, mstp"
+                   ptype="STATE_DE"/>
+            <ACTION>
+                echo "**************************  stp state  **********************"
+            </ACTION>
+        </COMMAND>
+
+        <COMMAND name="config stp priority"
+                 help="Configure Spanning Tree">
+        </COMMAND>
+
+        <COMMAND name="config stp hellotime"
+                 help="Configure Spanning Tree">
+        </COMMAND>
+
+        <COMMAND name="config stp txholdcount"
+                 help="Configure Spanning Tree">
+        </COMMAND>
+
+        <COMMAND name="config stp maxage"
+                 help="Configure Spanning Tree">
+        </COMMAND>
+
+        <COMMAND name="config stp forwarddelay"
+                 help="Configure Spanning Tree">
+        </COMMAND>
+        <COMMAND name="config stp forward_bpdu"
+                 help="Configure Spanning Tree">
+        </COMMAND>
+
+        <COMMAND name="config stp ports"
+                 help="Configure Spanning Tree">
+        </COMMAND>
 	</VIEW>
     <!--=======================================================-->
 </CLISH_MODULE>

@@ -79,8 +79,7 @@
             </PARAM>
 
             <ACTION>
-
-                /etc/tfortis_klish/clish/scripts/set_ipif.sh ${ifname} ${proto} ${IP} ${netmaskIP} ${gatewayIP} ${DNSIP}
+                /etc/tfortis_klish/scripts/ipif/set_ipif.sh ${ifname} ${proto} ${IP} ${netmaskIP} ${gatewayIP} ${DNSIP}
                 if [ $? -eq 0 ]; then
                     echo "Successes"
                 else

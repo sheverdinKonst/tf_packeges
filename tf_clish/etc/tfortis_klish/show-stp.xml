@@ -10,6 +10,27 @@
 		<COMMAND name="show stp"
              help="Show Spanning Tree information">
 		</COMMAND>
+
+        <COMMAND name="show stp mstp"
+                 help="Show Spanning Tree information">
+            <ACTION>
+                /etc/tfortis_klish/scripts/lua/stp/stp.lua
+            </ACTION>
+        </COMMAND>
+
+        <COMMAND name="show stp bridge"
+                 help="Show Spanning Tree information">
+            <ACTION>
+                /etc/tfortis_klish/scripts/lua/stp/show_stp_bridge.lua
+            </ACTION>
+        </COMMAND>
+
+        <COMMAND name="show stp port"
+                 help="Show Spanning Tree information">
+            <ACTION>
+                /etc/tfortis_klish/scripts/lua/stp/test_mstpd.lua
+            </ACTION>
+        </COMMAND>
 		
 	</VIEW>
     <!--=======================================================-->

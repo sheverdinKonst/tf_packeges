@@ -74,23 +74,22 @@
 
                        if [[  -n "${stateValue}" ]]; then
                             echo "state"
-                            /etc/tfortis_klish/clish/scripts/set_ports_state.sh ${portStart} ${stateValue}
+                            /etc/tfortis_klish/scripts/port/set_ports_state.sh ${portStart} ${stateValue}
                        fi
 
                        if [[  -n "${speedValue}" ]]; then
                             echo "speed"
-                            /etc/tfortis_klish/clish/scripts/set_ports_speed.sh ${portStart} ${speedValue}
+                            /etc/tfortis_klish/scripts/port/set_ports_speed.sh ${portStart} ${speedValue}
                        fi
 
                        if [[  -n "${flow_controlValue}" ]]; then
                             echo "flow"
-                            /etc/tfortis_klish/clish/scripts/set_ports_flow.sh ${portStart} ${flow_controlValue}
-
+                            /etc/tfortis_klish/scripts/port/set_ports_flow.sh ${portStart} ${flow_controlValue}
                        fi
 
                        if [[  -n "${poeValue}" ]]; then
                             echo "poe"
-                            /etc/tfortis_klish/clish/scripts/set_ports_poe.sh ${portStart} ${poeValue}
+                            /etc/tfortis_klish/scripts/port/set_ports_poe.sh ${portStart} ${poeValue}
                        fi
                    </ACTION>
                </COMMAND>

@@ -9,9 +9,6 @@
 		
 		<COMMAND name="show poe"
              help="Show PoE information">
-            <ACTION>
-                /etc/tfortis_klish/scripts/lua/poe/show_poe.lua
-            </ACTION>
 		</COMMAND>
 
         <COMMAND name="show poe config"

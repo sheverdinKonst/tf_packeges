@@ -55,7 +55,7 @@ int ctl_client_init(void)
     /* We need this bind. The autobind on connect isn't working properly.
      * The server doesn't get a proper sockaddr in recvmsg if we don't do this.
      */
-    if(0 != bind(s, (struct sockaddr *)&sa_svr, sizeof(sa)))
+    if(0 != bind(s, (struct sockaddr *)&sa, sizeof(sa)))
     {
         ERROR("Couldn't bind socket: %m");
         close(s);
